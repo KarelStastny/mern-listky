@@ -15,14 +15,27 @@ router.post("/", async (request, response) => {
     }
     // Vytvoření nového objektu na základě všech přijatých dat
     const newTicket = {
+      // must have
       band: request.body.band,
       price: request.body.price,
-      exchangeStock: request.body.exchangeStock,
-      country: request.body.country,
-      datePurkrase: request.body.datePurkrase,
       account: request.body.account,
-      typeOfTicket: request.body.typeOfTicket,
-      order: request.body.order,
+
+      //   Ohters
+      exchangeStock: request.body.exchangeStock || "",
+      country: request.body.country || "",
+      datePurkrase: request.body.datePurkrase || "",
+      typeOfTicket: request.body.typeOfTicket || "",
+      sellPrice: request.body.sellPrice || "",
+      note: request.body.note || "",
+      dateConcert: request.body.dateConcert || "",
+      profit: request.body.profit || "",
+      sellDate: request.body.sellDate || "",
+      holdTime: request.body.holdTime || "",
+      bill: request.body.bill || "",
+      dateOfPaymant: request.body.dateOfPaymant || "",
+      state: request.body.state || "",
+      sendTickets: request.body.sendTickets || "",
+ 
     };
 
     // Vytvoření lístku ze schématu
@@ -36,12 +49,9 @@ router.post("/", async (request, response) => {
   }
 });
 
-
-
 // Požadavek na přečtení vypsání lístků
 router.get("/", async (request, response) => {
   try {
-
     // Najdi vše co najdeš uložené v lístkách
     const tickets = await Ticket.find({});
 

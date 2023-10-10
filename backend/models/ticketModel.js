@@ -21,7 +21,7 @@ const ticketSchema = mongoose.Schema(
             required: false,
         },
         datePurkrase:{
-            type: Date,
+            type: String,
             required: false,
         },
         account:{
@@ -36,6 +36,48 @@ const ticketSchema = mongoose.Schema(
             type: Number,
             required: false,
         },
+        sellPrice:{
+            type: Number,
+            required: false,
+        },
+        note:{
+            type: String,
+            required: false,
+        },
+        dateConcert:{
+            type: String,
+            required: false,
+        },
+        profit:{
+            type: Number,
+            required: false,
+        },
+        sellDate:{
+            type: String,
+            required: false,
+        },
+        holdTime:{
+            type: String,
+            required: false,
+        },
+        bill:{
+            type: String,
+            required: false,
+        },
+        dateOfPaymant:{
+            type: String,
+            required: false,
+        },
+        state:{
+            type: String,
+            required: false,
+        },
+        sendTickets:{
+            type: String,
+            required: false,
+        },
+        
+    
     },
 
     // Vytvoření času pro ID

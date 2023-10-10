@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const TicketsModal = ({tickets}) => {
+const TicketsModal = ({ tickets }) => {
+    console.log(tickets);
   return (
     <div>
-      {
-        tickets.map((ticket) => (
-            <p>{ticket.band}</p>
-        ))
-      }
+      {tickets.map((ticket) => (
+      
+        <div key={ticket._id}>
+          <p>{ticket.band}</p>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TicketsModal
+export default TicketsModal;
