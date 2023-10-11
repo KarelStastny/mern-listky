@@ -1,5 +1,6 @@
 import React from "react";
 import { MdOutlineDelete } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 
 const TicketsModal = ({ tickets }) => {
@@ -75,7 +76,7 @@ const TicketsModal = ({ tickets }) => {
 
           {/* other */}
           <div className="flex gap-1">
-            <div>Upravit</div>
+            <Link to={`/tickets/editTicket/${ticket._id}`}>Upravit</Link>
             <div>Detaily</div>
             <div><MdOutlineDelete/></div>
           </div>

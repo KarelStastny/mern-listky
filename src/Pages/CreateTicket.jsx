@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom"
 
 
 
-const CreateBooks = () => {
+const CreateTicket = () => {
     const [loading, setLoading] = useState(false)
     const [band, setBand] = useState("")
     const [price, setPrice] = useState("")
@@ -128,4 +128,4 @@ const CreateBooks = () => {
   )
 }
 
-export default CreateBooks
+export default CreateTicket

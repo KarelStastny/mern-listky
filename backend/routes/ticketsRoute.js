@@ -71,7 +71,45 @@ router.get("/", async (request, response) => {
 });
 
 
+// Požadavek na přečtení jednoho lístku dle ID
 
+router.get("/:id", async (request,response) => {
+  try {
+    // ziskani ID listku z url
+    const {id} = request.params
+
+    // Hledáni listku v databazi na základě ID
+    const ticket = await Ticket.findById(id)
+
+    // Výsledný lístek vrácený jako JSON
+    return response.status(200).json(ticket)
+    
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+})
+
+
+// Upgrade ticket podle ID
+router.put("/:id", async (request, response) => {
+  try {
+    const {id} = request.params
+
+    const result = await Ticket.findByIdAndUpdate(id, request.body)
+
+    if(!result) {
+      return response.status(404).json({message: "Lístek nefunguje"})
+    }
+
+    return response.status(200).send({message:"Lístek úspěšně aktualizován"})
+
+
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+})
 
 
 

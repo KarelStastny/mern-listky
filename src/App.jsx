@@ -1,10 +1,13 @@
 import React from 'react'
 import {Routes, Route} from "react-router-dom"
 import Home from "./Pages/Home"
-import CreateBooks from './Pages/CreateBooks'
+import CreateTicket from './Pages/CreateTicket'
+import EditTicket from './Pages/EditTicket'
 
 
 const App = () => {
+  
+
 
 
 
@@ -13,7 +16,8 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/createBook' element={<CreateBooks/>}/>
+        <Route path='/tickets/createTicket' element={<CreateTicket/>}/>
+        <Route path='/tickets/editTicket/:id' element={<EditTicket/>}/>
       </Routes>
       
     </div>
