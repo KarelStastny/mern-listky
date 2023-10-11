@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import Loading from "../components/Loading"
 import axios from "axios"
 import TicketsModal from '../components/Ticket/TicketsModal'
+import {FcPlus} from "react-icons/fc"
 
 
 
@@ -35,6 +36,9 @@ const Home = () => {
   return (
     <div>
       <p>Hlavní Stránka všech lístků</p>
+      <div>
+      Přidat lístek <FcPlus/>
+      </div>
 
     {/* Sending tickets to the component to list all ticket to the page */}
       <TicketsModal tickets = {tickets} />

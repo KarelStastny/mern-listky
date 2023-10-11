@@ -35,6 +35,7 @@ router.post("/", async (request, response) => {
       dateOfPaymant: request.body.dateOfPaymant || "",
       state: request.body.state || "",
       sendTickets: request.body.sendTickets || "",
+      order: request.body.order || "",
  
     };
 
