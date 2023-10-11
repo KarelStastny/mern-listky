@@ -111,6 +111,24 @@ router.put("/:id", async (request, response) => {
   }
 })
 
+//delete ticket pode id
+router.delete('/:id', async (request, response) => {
+  try {
+    const { id } = request.params;
+
+    const result = await Ticket.findByIdAndDelete(id);
+
+    if (!result) {
+      return response.status(404).json({ message: 'Lístek nefunguje' });
+    }
+
+    return response.status(200).send({ message: 'Lístek úspěšně smazán' });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
 
 
 

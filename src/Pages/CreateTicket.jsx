@@ -79,12 +79,14 @@ const CreateTicket = () => {
             <label className='text-center uppercase text-blue-800 font-bold'>Nákupní Cena</label>
             <input className=' px-2 border-b-2 border-gray-700 outline-none' type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
         </div>
-
-        <h2 className='text-2xl mt-7 mb-4'>Ostatní záznamy</h2>
         <div className=' m-2 flex flex-col min-w-[350px] '>
             <label className='text-center uppercase text-blue-800 font-bold'>Datum nákupu</label>
             <input className=' px-2 border-b-2 border-gray-700 outline-none' type="date" value={datePurkrase} onChange={(e) => setDatePurkrase(e.target.value)} />
         </div>
+
+
+        <h2 className='text-2xl mt-7 mb-4'>Ostatní záznamy</h2>
+      
         <div className=' m-2 flex flex-col min-w-[350px] '>
             <label className='text-center uppercase text-blue-800 font-bold'>Země</label>
             <input className=' px-2 border-b-2 border-gray-700 outline-none' type="text" value={country} onChange={(e) => setCountry(e.target.value)} />

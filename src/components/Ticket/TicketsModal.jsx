@@ -4,81 +4,78 @@ import { Link } from "react-router-dom";
 
 
 const TicketsModal = ({ tickets }) => {
-  console.log(tickets);
+  console.log(typeof(tickets.price));
   return (
     <div>
 
 {/* Záhlaví taublky */}
        
-<label className="flex gap-2 items-center border  ">
-          <div className=" w-[60px]">Datum nákupu</div>
+<label className="flex gap-2 items-center border p-2  ">
+          <div className=" w-[60px] text-center ">Nákup</div>
 
-          <div className=" w-[160px]">Učet</div>
-          <div className=" w-[160px]">Kapela</div>
+          <div className=" w-[160px] text-center ">Učet</div>
+          <div className=" w-[160px] text-center">Kapela</div>
 
-          <div className="flex flex-col w-[100px]">
+          <div className="flex flex-col w-[100px] text-center">
             <div>Země</div>
             <div>Objednávka</div>
           </div>
-          <div className=" w-[140px]">
-            <div>Datum Koncertu</div>
-            <div>Typ vstupenky</div>
+          <div className=" w-[160px] text-center">
+            <div>Datum k.</div>
+            <div>Sezení / Staní</div>
           </div>
 
-          <div className=" w-[50px]">Cena lístku</div>
-          <div className=" w-[50px]">Prodejní cena</div>
-          <div className=" w-[50px]">Profit</div>
-          <div className=" w-[100px]">Burza</div>
-          <div className=" w-[80px]">Typ akce</div>
-          <div className=" w-[120px]">Účet</div>
-          <div className=" w-[60px]">Datum prodeje</div>
-          <div className=" w-[70px]">Odeslány vstupenky</div>
-          <div className="w-[60px]">Dny</div>
-          <div className=" w-[100px]">Stav</div>
-          <div className=" w-[150px]">Poznámky</div>
+          <div className=" w-[90px] text-center">Nákup</div>
+          <div className=" w-[90px] text-center">Prodej</div>
+          <div className=" w-[90px] text-center">Profit</div>
+          <div className=" w-[100px] text-center">Burza</div>
+          <div className=" w-[150px] text-center">Typ akce</div>
+          <div className=" w-[120px] text-center">Účtenka</div>
+          <div className=" w-[140px] text-center">Prodej dat.</div>
+          <div className=" w-[120px] text-center">Předání lístků</div>
+          <div className=" w-[60px] text-center">Dny</div>
+          <div className=" w-[100px] text-center">Stav</div>
+          <div className=" w-[150px] text-center">Poznámky</div>
 
           {/* other */}
-          <div className="flex gap-1">
-            <div>Upravit</div>
-            <div>Detaily</div>
-            <div>Vymazat</div>
+          <div className="flex gap-1 w-[90px]">
+            <div>Akce</div>
           </div>
         </label>
 
         {/* Tabulka lístků */}
       {tickets.map((ticket) => (
-        <section key={ticket._id} className="flex gap-2 items-center border  ">
-          <div className=" w-[60px]">{ticket.datePurkrase}</div>
-
-          <div className=" w-[160px]">{ticket.account}</div>
-          <div className=" w-[160px]">{ticket.band}</div>
+        <section key={ticket._id} className="flex gap-2 items-center border mt-1 mb-2 rounded-lg bg-sky-300 p-2  text-xs  ">
+          <div className=" w-[60px] ">{ticket.datePurkrase}</div>
+          <div className=" w-[160px]  ">{ticket.account}</div>
+          <div className=" w-[160px] ">{ticket.band}</div>
 
           <div className="flex flex-col w-[100px]">
             <div>{ticket.country}</div>
             <div>{ticket.order}</div>
           </div>
-          <div className=" w-[140px]">
+          <div className=" w-[160px]">
             <div>{ticket.dateConcert}</div>
             <div>{ticket.typeOfTicket}</div>
           </div>
 
-          <div className=" w-[50px]">{ticket.price}</div>
-          <div className=" w-[50px]">{ticket.sellPrice}</div>
-          <div className=" w-[50px]">{ticket.profit}</div>
+          <div className=" w-[90px]">{ticket && ticket.price && ticket.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</div>
+          <div className=" w-[90px]">{ticket && ticket.sellPrice && ticket.sellPrice.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</div>
+          <div className=" w-[90px]">{ticket && ticket.profit && ticket.profit.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</div>
           <div className=" w-[100px]">{ticket.exchangeStock}</div>
-          <div className=" w-[80px]">{ticket.holdTime}</div>
+          <div className=" w-[150px]">{ticket.holdTime}</div>
           <div className=" w-[120px]">{ticket.bill}</div>
-          <div className=" w-[60px]">{ticket.sellDate}</div>
-          <div className=" w-[70px]">{ticket.sendTickets}</div>
+          <div className=" w-[140px]">{ticket.sellDate}</div>
+          <div className=" w-[120px]">{ticket.sendTickets}</div>
           <div className="w-[60px]">{ticket.dateOfPaymant}</div>
           <div className=" w-[100px]">{ticket.state}</div>
           <div className=" w-[150px]">{ticket.note}</div>
 
           {/* other */}
-          <div className="flex gap-1">
+          <div className="flex gap-1 w-[90px]">
             <Link to={`/tickets/editTicket/${ticket._id}`}>Upravit</Link>
-            <div>Detaily</div>
-            <div><MdOutlineDelete/></div>
+     
+            <Link to={`/tickets/deleteTicket/${ticket._id}`}><MdOutlineDelete/></Link>
           </div>
         </section>
       ))}

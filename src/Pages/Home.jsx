@@ -28,15 +28,20 @@ const Home = () => {
 
   return (
     <div>
-      <p>Hlavní Stránka všech lístků</p>
-      <div>
-        <Link to={"/createBook"}>
-          Přidat lístek <FcPlus />
+      <h1 className="text-3xl font-bold text-center mt-3 mb-3 ">Účet - hlavní strana</h1>
+      <div  className="w-[1450px] m-auto mb-4">
+        <Link className="flex gap-3 items-center" to={"/tickets/createTicket"}>
+           <FcPlus className="w-[33px] h-[33px]" /> 
+           <p>Nový záznam</p>
         </Link>
       </div>
 
       {/* Sending tickets to the component to list all ticket to the page */}
+      <div className="w-[1450px] m-auto">
       <TicketsModal tickets={tickets} />
+
+      </div>
+      
     </div>
   );
 };

@@ -39,6 +39,24 @@ const EditTicket = () => {
         .get(`http://localhost:5555/tickets/${id}`)
         .then((response) => {
             setBand(response.data.band)
+            setPrice(response.data.price)
+            setAccount(response.data.account)
+            setCountry(response.data.country)
+            setExchangeStock(response.data.exchangeStock)
+            setTypeOfTicket(response.data.typeOfTicket)
+            setOrder(response.data.order)
+            setDatePurkrase(response.data.datePurkrase)
+            setHoldTime(response.data.holdTime)
+            setSellPrice(response.data.sellPrice)
+            setDateConcert(response.data.dateConcert)
+            setProfit(response.data.profit)
+            setSellDate(response.data.sellDate)
+            setDateOfPaymant(response.data.dateOfPaymant)
+            setState(response.data.state)
+            setSendTickets(response.data.sendTickets)
+            setBill(response.data.bill)
+    
+            
             setLoading(false)
         })
         .catch((error) => {
