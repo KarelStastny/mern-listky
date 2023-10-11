@@ -31,7 +31,7 @@ const TicketsModal = ({ tickets }) => {
           <div className=" w-[80px]">Typ akce</div>
           <div className=" w-[120px]">Účet</div>
           <div className=" w-[60px]">Datum prodeje</div>
-          <div className=" w-[50px]">Odeslány vstupenky</div>
+          <div className=" w-[70px]">Odeslány vstupenky</div>
           <div className="w-[60px]">Dny</div>
           <div className=" w-[100px]">Stav</div>
           <div className=" w-[150px]">Poznámky</div>
@@ -68,7 +68,7 @@ const TicketsModal = ({ tickets }) => {
           <div className=" w-[80px]">{ticket.holdTime}</div>
           <div className=" w-[120px]">{ticket.bill}</div>
           <div className=" w-[60px]">{ticket.sellDate}</div>
-          <div className=" w-[50px]">{ticket.sendTickets}</div>
+          <div className=" w-[70px]">{ticket.sendTickets}</div>
           <div className="w-[60px]">{ticket.dateOfPaymant}</div>
           <div className=" w-[100px]">{ticket.state}</div>
           <div className=" w-[150px]">{ticket.note}</div>

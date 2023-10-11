@@ -50,6 +50,9 @@ router.post("/", async (request, response) => {
   }
 });
 
+
+
+
 // Požadavek na přečtení vypsání lístků
 router.get("/", async (request, response) => {
   try {
@@ -66,5 +69,12 @@ router.get("/", async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
+
+
+
+
+
+
+
 
 export default router;
