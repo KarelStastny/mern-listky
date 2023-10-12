@@ -1,5 +1,5 @@
 import React from "react";
-import { MdOutlineDelete } from 'react-icons/md';
+import { MdOutlineDelete, MdCreate } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
 
@@ -73,9 +73,9 @@ const TicketsModal = ({ tickets }) => {
 
           {/* other */}
           <div className="flex gap-1 w-[90px]">
-            <Link to={`/tickets/editTicket/${ticket._id}`}>Upravit</Link>
+            <Link to={`/tickets/editTicket/${ticket._id}`}><MdCreate className="text-xl"/></Link>
      
-            <Link to={`/tickets/deleteTicket/${ticket._id}`}><MdOutlineDelete/></Link>
+            <Link to={`/tickets/deleteTicket/${ticket._id}`}><MdOutlineDelete className="text-xl"/></Link>
           </div>
         </section>
       ))}
